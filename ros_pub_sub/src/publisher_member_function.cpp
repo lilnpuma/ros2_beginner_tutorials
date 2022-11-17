@@ -43,7 +43,7 @@ using namespace std::chrono_literals;
  * member function as a callback from the timer. */
 
 class MinimalPublisher : public rclcpp::Node {
-public:
+ public:
   MinimalPublisher()
       : Node("Minimal_Publisher"), msg_("You are visitor number =") {
     publisher_ =
@@ -52,7 +52,7 @@ public:
         500ms, std::bind(&MinimalPublisher::timer_callback, this));
   }
 
-private:
+ private:
   void timer_callback() {
     auto message = std_msgs::msg::String();
     unsigned int seed = 117817928;
